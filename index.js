@@ -5,30 +5,29 @@
  * @module index
  */
 
-
 const express = require('express');
-
 const pol = require('./pol.js');
+
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.use('/docs', express.static('./docs'));
 
-/**
- * / Request Handler (All Routes)
- * @param req
- * @param res
- */
-
 app.get('/', requestHandler);
 
-function requestHandler(req,res) {
-  res.setHeader('Content-Type', 'text/html');
-  res.statusCode = 200;
-  let isItAlive = pol.isAlive(req.query.dead).toString();
-  res.write( isItAlive );
-  res.end();
+/**
+ * Request Handler (All Routes)
+ * @param request
+ * @param response
+ */
+function requestHandler(request, response) {
+  response.setHeader('Content-Type', 'text/html');
+  response.statusCode = 200;
+  const isItAlive = pol.isAlive(request.query.dead).toString();
+  response.write(isItAlive);
+  response.end();
 }
 
-app.listen(process.env.PORT, () => console.log('server up') );
-
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`) );

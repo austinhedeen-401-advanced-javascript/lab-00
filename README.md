@@ -35,4 +35,4 @@ Returns true/false to indicate how the server works
 * Lint Tests: `npm run lint`
 
 #### UML
-![UML Diagram](whiteboard.jpg)
+![UML Diagram](assets/whiteboard.jpg)

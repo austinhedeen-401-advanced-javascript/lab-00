@@ -12,13 +12,13 @@
   },
   "author": "John Cokos",
   "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
     "jsdoc": "^3.6.3"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
   }
 }
